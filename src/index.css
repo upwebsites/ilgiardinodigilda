@@ -1,0 +1,135 @@
+:root {
+  --primary: #6B8E23;
+  /* Olive Drab - more professional green */
+  --primary-dark: #556B2F;
+  --accent-gold: #D4AF37;
+  --accent-sage: #B2AC88;
+  --bark: #3D2B1F;
+  --cream: #FAF9F6;
+  --white: #ffffff;
+
+  --font-main: 'Inter', sans-serif;
+  --font-title: 'Outfit', sans-serif;
+
+  --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --border-width: 2px;
+  --shadow-premium: 0 10px 30px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--cream);
+  color: var(--bark);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Background Pattern */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/paw_pattern.png');
+  background-size: 400px;
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: -1;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-title);
+  letter-spacing: -0.02em;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* Premium Card Styles */
+.premium-card {
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow-premium);
+  background: var(--white);
+  border-radius: 12px;
+  transition: all 0.4s var(--transition-smooth);
+}
+
+.premium-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15);
+}
+
+.btn-premium {
+  display: inline-block;
+  padding: 16px 40px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-family: var(--font-title);
+  font-size: 1.1rem;
+  transition: all 0.3s var(--transition-smooth);
+  cursor: pointer;
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+}
+
+.btn-premium:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.section-title {
+  text-align: left;
+  font-size: 4rem;
+  margin-bottom: 40px;
+  color: var(--bark);
+  max-width: 800px;
+}
+
+.section-subtitle {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  color: var(--primary);
+  display: block;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+}
+
+/* Wave Divider */
+.wave-divider {
+  width: 100%;
+  height: 60px;
+  background-color: transparent;
+  background-image: radial-gradient(circle at 20px 0, transparent 20px, var(--cream) 21px);
+  background-size: 40px 40px;
+  transform: rotate(180deg);
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2.5rem;
+  }
+}
